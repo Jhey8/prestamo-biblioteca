@@ -51,6 +51,50 @@
 
     </section>
 
+    <section class="libros">
+
+        <h3>Registrar libros</h3>
+
+        <form action="" id="formularioLibro">
+
+            <div>
+                <label for="">Escribe el id del libro:</label>
+                <input type="number" name="" id="id_libro" placeholder="Ingresa el ID">
+
+            </div>
+
+            <div>
+                <label for="">Escribe el nombre del libro:</label>
+                <input type="text" name="" id="nombreLibro" placeholder="Ingresa el nombre del libro">
+            </div>
+            <div>
+                <label for="">Escribe el autor del libro:</label>
+                <input type="text" name="" id="autorLibro" placeholder="Ingresa el autor del libro">
+            </div>
+
+            <button type="submit">Registrar</button>
+
+        </form>
+
+        <h3>Lista de Libros</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Autor</th>
+                </tr>
+            </thead>
+            <tbody id="tablaLibros">
+
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
 
 
 
@@ -73,6 +117,27 @@
             fila.insertCell(2).textContent = correoUsuario;
 
             formularioUsuario.reset();
+        });
+
+    // Codigo para el formulario de libros
+     const formularioLibro = document.getElementById('formularioLibro');
+
+        formularioLibro.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const idLibro = document.getElementById('id_libro').value;
+            const nombreLibro = document.getElementById('nombreLibro').value;
+            const autorLibro = document.getElementById('autorLibro').value;
+
+            const tablaLibros = document.getElementById('tablaLibros');
+
+            const fila = tablaLibros.insertRow();
+
+            fila.insertCell(0).textContent = idLibro;
+            fila.insertCell(1).textContent = nombreLibro;
+            fila.insertCell(2).textContent = autorLibro;
+
+            formularioLibro.reset();
         });
 
     </script>
