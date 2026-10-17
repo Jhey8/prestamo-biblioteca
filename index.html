@@ -95,6 +95,55 @@
     </section>
 
 
+     <section class="prestamos">
+
+        <h3>Registro de prestamos</h3>
+
+        <form action="" id="formularioPrestamos">
+
+            <div>
+                <label for="">Ingrese el id: </label>
+                <input type="number" id="id_libro_prestamo" placeholder="Ingresa el ID">
+            </div>
+
+            <div>
+                <label for="">Ingrese el usuario</label>
+                <input type="text"  id="usuario_prestamo" placeholder="Ingrese el usuario">
+            </div>
+
+            <div>
+                <label for="">Escribe el nombre del libro:</label>
+                <input type="text" name="" id="nombreLibroPrestamo" placeholder="Ingresa el nombre del libro">
+            </div>
+            <div>
+                <label for="">Ingrese la fecha del prestamo:</label>
+                <input type="date" name="" id="fechaPrestamop" placeholder="Ingresa la fecha del prestamo">
+            </div>
+
+            <button type="submit">Registrar Prestamo</button>
+
+        </form>
+
+        <h3>Lista de prestamos</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Libro</th>
+                    <th>fecha</th>
+                </tr>
+            </thead>
+            <tbody id="tablaPrestamos">
+
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
 
 
 
@@ -138,6 +187,36 @@
             fila.insertCell(2).textContent = autorLibro;
 
             formularioLibro.reset();
+        });
+
+    //Codigo para el formulario de prestamo
+        const formularioPrestamos = document.getElementById('formularioPrestamos');
+
+        formularioPrestamos.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const idLibro = document.getElementById('id_libro_prestamo').value.trim();
+            const usuario = document.getElementById('usuario_prestamo').value.trim();
+            const nombreLibro = document.getElementById('nombreLibroPrestamo').value.trim();
+            const fecha = document.getElementById('fechaPrestamop').value;
+
+            if (idLibro === "" || usuario === "" || nombreLibro === "" || fecha === "") {
+                alert("Error: todos los campos son obligatorios. Completa el ID, usuario, libro y fecha.");
+                return;
+            }
+
+            const tablaPrestamos = document.getElementById('tablaPrestamos');
+
+            const fila = tablaPrestamos.insertRow();
+
+            fila.insertCell(0).textContent = idLibro;
+            fila.insertCell(1).textContent = usuario;
+            fila.insertCell(2).textContent = nombreLibro;
+            fila.insertCell(3).textContent = fecha;
+
+            alert("Préstamo registrado correctamente.");
+
+            formularioPrestamos.reset();
         });
 
     </script>
