@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préstamos-biblioteca</title>
+</head>
+
+<body>
+    <section class="usuarios">
+
+        <h3>Registrar usuarios</h3>
+
+        <form action="" id="formularioUsuario">
+
+            <div>
+                <label for="">Escribe el id del usuario:</label>
+                <input type="number" name="" id="id" placeholder="Ingresa el ID">
+
+            </div>
+
+            <div>
+                <label for="">Escribe el nombre completo:</label>
+                <input type="text" name="" id="nombreUsuario" placeholder="Ingresa el nombre completo">
+            </div>
+            <div>
+                <label for="">Escribe el correo:</label>
+                <input type="email" name="" id="correoUsuario">
+            </div>
+
+            <button type="submit">Registrar</button>
+
+        </form>
+
+        <h3>Lista de Usuarios</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody id="tablaUsuarios">
+
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+
+    <script>
+        const formularioUsuario = document.getElementById('formularioUsuario');
+
+        formularioUsuario.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const idUsuario = document.getElementById('id').value;
+            const nombreUsuario = document.getElementById('nombreUsuario').value;
+            const correoUsuario = document.getElementById('correoUsuario').value;
+
+            const tablaUsuarios = document.getElementById('tablaUsuarios');
+
+            const fila = tablaUsuarios.insertRow();
+
+            fila.insertCell(0).textContent = idUsuario;
+            fila.insertCell(1).textContent = nombreUsuario;
+            fila.insertCell(2).textContent = correoUsuario;
+
+            formularioUsuario.reset();
+        });
+
+    </script>
+
+</body>
+
+</html>
