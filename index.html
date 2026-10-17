@@ -95,7 +95,7 @@
     </section>
 
 
-     <section class="prestamos">
+    <section class="prestamos">
 
         <h3>Registro de prestamos</h3>
 
@@ -108,7 +108,7 @@
 
             <div>
                 <label for="">Ingrese el usuario</label>
-                <input type="text"  id="usuario_prestamo" placeholder="Ingrese el usuario">
+                <input type="text" id="usuario_prestamo" placeholder="Ingrese el usuario">
             </div>
 
             <div>
@@ -144,6 +144,81 @@
     </section>
 
 
+    <section>
+
+        <h3>Reportes</h3>
+
+        <div>
+            <h3>Lista de Usuarios</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaUsuarios">
+                    <tr>
+                        <td>1</td>
+                        <td>Nando</td>
+                        <td>nando@example.com</td>
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+        </div>
+        <div>
+            <h3>Lista de Libros</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Autor</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaLibros">
+                    <tr>
+                        <td>1</td>
+                        <td>El principito</td>
+                        <td>Antoine de Saint-Exupéry</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+        <div>
+            <h3>Lista de prestamos</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Libro</th>
+                        <th>fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaPrestamos">
+                    <tr>
+                        <td>1</td>
+                        <td>Nando</td>
+                        <td>El principito</td>
+                        <td>2023-06-01</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </section>
+
+
 
 
 
@@ -168,8 +243,8 @@
             formularioUsuario.reset();
         });
 
-    // Codigo para el formulario de libros
-     const formularioLibro = document.getElementById('formularioLibro');
+        // Codigo para el formulario de libros
+        const formularioLibro = document.getElementById('formularioLibro');
 
         formularioLibro.addEventListener("submit", function (event) {
             event.preventDefault();
@@ -189,7 +264,7 @@
             formularioLibro.reset();
         });
 
-    //Codigo para el formulario de prestamo
+        //Codigo para el formulario de prestamo
         const formularioPrestamos = document.getElementById('formularioPrestamos');
 
         formularioPrestamos.addEventListener("submit", function (event) {
